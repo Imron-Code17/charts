@@ -271,21 +271,6 @@ class DatumLegend<D> extends ChartBehavior<D> {
         secondaryMeasureFormatter == o.secondaryMeasureFormatter &&
         entryTextStyle == o.entryTextStyle;
   }
-
-  @override
-  int get hashCode {
-    return hashValues(
-        selectionModelType,
-        contentBuilder,
-        position,
-        outsideJustification,
-        insideJustification,
-        showMeasures,
-        legendDefaultMeasure,
-        measureFormatter,
-        secondaryMeasureFormatter,
-        entryTextStyle);
-  }
 }
 
 /// Flutter specific wrapper on the common Legend for building content.
