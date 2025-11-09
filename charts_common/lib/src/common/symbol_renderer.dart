@@ -172,7 +172,6 @@ class LineSymbolRenderer extends SymbolRenderer {
       right -= roundEndCapsPixels;
     }
 
-    // TODO: Pass in strokeWidth, roundEndCaps, and dashPattern from
     // line renderer config.
     canvas.drawLine(
       points: [Point(left, centerHeight), Point(right, centerHeight)],

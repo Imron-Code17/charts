@@ -24,7 +24,7 @@ import 'package:charts_common/common.dart' as common
         SliderListenerCallback,
         SliderStyle,
         SymbolRenderer;
-import 'package:flutter/widgets.dart' show hashValues;
+
 import 'package:meta/meta.dart' show immutable;
 
 import '../chart_behavior.dart' show ChartBehavior, GestureType;
@@ -60,6 +60,7 @@ class Slider<D> extends ChartBehavior<D> {
   final int? layoutPaintOrder;
 
   /// Initial domain position of the slider, in domain units.
+  // ignore: unnecessary_question_mark
   final dynamic? initialDomainValue;
 
   /// Callback function that will be called when the position of the slider
@@ -116,6 +117,7 @@ class Slider<D> extends ChartBehavior<D> {
   factory Slider(
       {common.SelectionTrigger? eventTrigger,
       common.SymbolRenderer? handleRenderer,
+      // ignore: unnecessary_question_mark
       dynamic? initialDomainValue,
       String? roleId,
       common.SliderListenerCallback? onChangeCallback,
@@ -188,11 +190,5 @@ class Slider<D> extends ChartBehavior<D> {
         snapToDatum == o.snapToDatum &&
         style == o.style &&
         layoutPaintOrder == o.layoutPaintOrder;
-  }
-
-  @override
-  int get hashCode {
-    return hashValues(eventTrigger, handleRenderer, initialDomainValue, roleId,
-        snapToDatum, style, layoutPaintOrder);
   }
 }

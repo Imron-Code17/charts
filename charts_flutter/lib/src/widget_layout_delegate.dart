@@ -13,6 +13,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+// ignore_for_file: unnecessary_import
+
 import 'dart:ui' show Offset;
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';

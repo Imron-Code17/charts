@@ -233,6 +233,7 @@ abstract class BaseTickDrawStrategy<D> implements TickDrawStrategy<D> {
       AxisOrientation orientation,
       {bool collision = false}) {
     final isVertical =
+        // ignore: unnecessary_null_comparison
         orientation != null && orientation == AxisOrientation.right ||
             orientation == AxisOrientation.left;
     final rotationRelativeToAxis =
@@ -259,7 +260,6 @@ abstract class BaseTickDrawStrategy<D> implements TickDrawStrategy<D> {
   @override
   CollisionReport<D> collides(
       List<Tick<D>>? ticks, AxisOrientation? orientation) {
-    // TODO: Collision analysis for rotated labels are not
     // supported yet.
 
     // If there are no ticks, they do not collide.
@@ -356,7 +356,6 @@ abstract class BaseTickDrawStrategy<D> implements TickDrawStrategy<D> {
   ViewMeasuredSizes measureVerticallyDrawnTicks(
       List<Tick<D>> ticks, int maxWidth, int maxHeight,
       {bool collision = false}) {
-    // TODO: Add spacing to account for the distance between the
     // text and the axis baseline (even if it isn't drawn).
 
     final maxHorizontalSliceWidth = ticks.fold(0.0, (double prevMax, tick) {
@@ -434,7 +433,6 @@ abstract class BaseTickDrawStrategy<D> implements TickDrawStrategy<D> {
     );
   }
 
-  // TODO: Why is drawAreaBounds required when it is unused?
   @protected
   void drawLabel(
     ChartCanvas canvas,

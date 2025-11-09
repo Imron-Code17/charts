@@ -151,8 +151,10 @@ class NumericTickProvider extends BaseTickProvider<num> {
   /// [minTickCount] The min tick count must be greater than 1.
   void setTickCount(int maxTickCount, int minTickCount) {
     // Don't allow a single tick, it doesn't make sense. so tickCount > 1
+    // ignore: unnecessary_null_comparison
     if (maxTickCount != null && maxTickCount > 1) {
       _desiredMaxTickCount = maxTickCount;
+      // ignore: unnecessary_null_comparison
       if (minTickCount != null &&
           minTickCount > 1 &&
           minTickCount <= _desiredMaxTickCount!) {
@@ -180,6 +182,7 @@ class NumericTickProvider extends BaseTickProvider<num> {
   ///
   /// [steps] allowed step sizes in the [1, 10) range.
   set allowedSteps(List<double> steps) {
+    // ignore: unnecessary_null_comparison
     assert(steps != null && steps.isNotEmpty);
     steps.sort();
 
@@ -258,7 +261,6 @@ class NumericTickProvider extends BaseTickProvider<num> {
       );
     }
 
-    // TODO: Recalculate ticks only if something changed.
     var selectedTicksRange = double.maxFinite;
     var foundPreferredTicks = false;
     var viewportDomain = scale.viewportDomain;
@@ -429,7 +431,6 @@ class NumericTickProvider extends BaseTickProvider<num> {
           continue;
         }
 
-        // TODO: Skip steps that format to the same string.
         // But wait until the last step to prevent the cost of the formatter.
         // Potentially store the formatted strings in TickStepInfo?
         if (tmpStepSize * favoredRegionCount >= favoredNum) {
@@ -452,7 +453,6 @@ class NumericTickProvider extends BaseTickProvider<num> {
           continue;
         }
 
-        // TODO: Skip steps that format to the same string.
         // But wait until the last step to prevent the cost of the formatter.
         final tmpStepStart = _getStepLessThan(low.toDouble(), tmpStepSize);
         if (tmpStepStart + (tmpStepSize * regionCount) >= high) {

@@ -38,7 +38,6 @@ class InitialSelection<D> implements ChartBehavior<D> {
   late LifecycleListener<D> _lifecycleListener;
   bool _firstDraw = true;
 
-  // TODO : When the series changes, if the user does not also
   // change the index the wrong item could be highlighted.
   InitialSelection(
       {this.selectionModelType = SelectionModelType.info,
